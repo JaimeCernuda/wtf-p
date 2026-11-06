@@ -12,7 +12,7 @@ It started from `vendors/claude/` at `eff98baf` and replaces the Clio Coder piec
 | --- | --- |
 | desk extension (`clio/`, `vendors/clio-extension/`) | not used |
 | `extension_wtfp__record`, `extension_wtfp__measure_section` | `wtfp_record`, `wtfp_measure_section` (`ai.iowarp.clio/tools/records.py`) |
-| playbooks `wtfp-draft-review`, `wtfp-plan-section` | `/wtfp:draft-and-review`, `/wtfp:plan-and-check`, run with `run_workflow` |
+| playbooks `wtfp-draft-review`, `wtfp-plan-section` | declared workflows `draft-review` and `plan-section` (`ai.iowarp.clio/workflows/`), each with a `section` input; `@draft-review` and `/wtfp:draft-and-review <section>` reach the same declaration |
 | roles (`agents/*.md`) | `ai.iowarp.clio/subagents/roles.py`; checker, reviewer and verifier roles run read-only |
 | `export-latex` | builds the paper with `latex_build` |
 | write guard (`hooks/hooks.json`, `scripts/`) | the same files, run on CLIO's Claude Code hook wire |

@@ -1,0 +1,19 @@
+{
+  "description": "Plan one section from the project's evidence, then have an independent checker review the plan (WTF-P's plan-section playbook).",
+  "inputs": [
+    {"name": "section", "description": "The section to plan, as the outline names it (for example background)", "required": true}
+  ],
+  "steps": [
+    {
+      "id": "plan",
+      "target": "wtfp-section-planner",
+      "input": "Create one contained, immutable plan for section {section} from the portable project state. Write only the plan artifact under .planning/sections/{section}/plans/. $task"
+    },
+    {
+      "id": "check",
+      "target": "wtfp-plan-checker",
+      "after": ["plan"],
+      "input": "Independently check the plan for section {section}: traceability, support for every claim, and fit to the outline and venue. Do not change it. The planner reported: $plan"
+    }
+  ]
+}

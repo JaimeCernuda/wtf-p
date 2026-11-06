@@ -1,0 +1,19 @@
+{
+  "description": "Draft one approved section, then have an independent reviewer check it (WTF-P's draft-review playbook).",
+  "inputs": [
+    {"name": "section", "description": "The section to draft, as the outline names it (for example background)", "required": true}
+  ],
+  "steps": [
+    {
+      "id": "draft",
+      "target": "wtfp-section-writer",
+      "input": "Draft section {section} from its explicitly approved plan into its declared paper artifact (paper/sections/{section}.tex) and update only its declared summary. $task"
+    },
+    {
+      "id": "review",
+      "target": "wtfp-section-reviewer",
+      "after": ["draft"],
+      "input": "Independently review section {section} as drafted against its plan, sources, decisions and venue constraints. Do not claim or make any change. The draft step reported: $draft"
+    }
+  ]
+}
