@@ -1,0 +1,26 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "wtfp",
+  "version": "0.9.0",
+  "description": "Write a scientific paper from evidence: WTF-P's records, actions, roles and write guard, on CLIO, with the paper's LaTeX built by the latex plugin.",
+  "author": {
+    "name": "akougkas"
+  },
+  "homepage": "https://github.com/JaimeCernuda/wtf-p",
+  "repository": "https://github.com/JaimeCernuda/wtf-p",
+  "license": "MIT",
+  "keywords": [
+    "academic-writing",
+    "latex",
+    "papers",
+    "research",
+    "science"
+  ],
+  "extensions": {
+    "ai.iowarp.clio": {
+      "requires": [
+        "latex"
+      ]
+    }
+  }
+}
